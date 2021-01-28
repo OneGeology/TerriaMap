@@ -24,12 +24,12 @@
         // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
         // globalDisclaimer: {
         //     confirmationRequired: false,
-        //     buttonTitle: "I agree",
-        //     title: "Disclaimer",
-        //     // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
-        //     // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
-        //     //prodHostRegex: "gov.\\.au$",
-        //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
+        //     buttonTitle: "Ok",
+        //     title: "Discalimer",
+            // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
+            // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
+            //prodHostRegex: "gov.\\.au$",
+            //devHostRegex: "\\b(staging|preview|test|dev)\\.",
         //     enableOnLocalhost: true // If false, don't show this when running on localhost
         // },
         
@@ -39,16 +39,16 @@
             link: "http://www.example.com"
         },*/
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "Terria Map",
+        appName: "OneGeology Portal",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
             "",
-            "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+            "<a target=\"_blank\" href=\"http://www.onegeology.org/\"><img src=\"images/oneGeology_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a><div class=\"two\"></div><div class=\"one\">Providing geoscience data globally</div>",
             ""
         ],
         // Shown when things go wrong.
-        supportEmail: "help@example.com",
+        supportEmail: "onegeology@bgs.ac.uk",
         // You probably shouldn't change this.
         proj4ServiceBaseUrl: "proj4def/",
         // Or this
@@ -59,13 +59,13 @@
         mobileDefaultViewerMode: "2d",
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
-        "experimentalFeatures": true,
+        "experimentalFeatures": false,
 
         // To override TerriaJS's region mapping file with a local one.
         // regionMappingDefinitionsUrl: "data/regionMapping.json"
 
         // True to display welcome message on startup.
-        // "showWelcomeMessage": false,
+        "showWelcomeMessage": true,
 
         // True to display in-app guides.
         // "showInAppGuides": false,
