@@ -11,6 +11,8 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
+    "browserslist": "^4.16.1",
+    "caniuse-lite": "^1.0.30001174",
     "pm2": "^3.2.2",
     "terriajs-server": "^3.0.1"
   },
