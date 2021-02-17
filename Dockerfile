@@ -1,4 +1,4 @@
-FROM node:8.12
+FROM ubuntu:20.04
 
 LABEL Description="TerriaJS dockerized for OneGeology"
 
