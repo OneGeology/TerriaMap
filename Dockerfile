@@ -21,6 +21,7 @@ COPY . /usr/local/app/TerriaMap
 
 WORKDIR /usr/local/app/TerriaMap
 
+RUN npm cache verify
 RUN npm install -g sync-dependencies sync-dependencies --source terriajs --from packages/terriajs/package.json
 RUN yarn install
 RUN npm run gulp 
