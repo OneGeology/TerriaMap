@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y git gdal-bin
 
 WORKDIR /usr/local/app/
 
-COPY . . 
+COPY . /usr/local/app/TerriaMap 
 
 WORKDIR /usr/local/app/TerriaMap
 
