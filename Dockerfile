@@ -6,7 +6,9 @@ LABEL Description="TerriaJS dockerized for OneGeology"
 # Install Gdal 
 # ------------
 
-# RUN apt-get update && apt-get install -y git gdal-bin
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y git gdal-bin npm
 
 
 # ----------------------------------------
