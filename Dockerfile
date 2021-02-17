@@ -1,13 +1,33 @@
-# Docker image for the primary terria map application server
-FROM node:8
+FROM node:8.12
 
-RUN apt-get update && apt-get install -y gdal-bin
+LABEL Description="TerriaJS dockerized for OneGeology"
 
-RUN mkdir -p /usr/src/app && mkdir -p /etc/config/client
-WORKDIR /usr/src/app/component
-COPY . /usr/src/app
-RUN rm wwwroot/config.json && ln -s /etc/config/client/config.json wwwroot/config.json
+# ------------
+# Install Gdal 
+# ------------
+
+RUN apt-get update && apt-get install -y git gdal-bin
+
+
+# ----------------------------------------
+# Pick TerriaMap repo
+# ----------------------------------------
+
+WORKDIR /usr/local/app/
+
+COPY . . 
+
+WORKDIR /usr/local/app/TerriaMap
+
+RUN npm install -g sync-dependencies && \
+    sync-dependencies --source terriajs && \
+    npm install && \
+    npm run gulp
 
 EXPOSE 3001
 
-CMD [ "node", "./node_modules/terriajs-server/lib/app.js", "--config-file", "devserverconfig.json" ]
+# --------------------
+# Run within container
+# --------------------
+
+CMD [ "node", "node_modules/terriajs-server/lib/app.js", "--config-file", "devserverconfig.json" ]
