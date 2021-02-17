@@ -21,10 +21,7 @@ COPY . /usr/local/app/TerriaMap
 
 WORKDIR /usr/local/app/TerriaMap
 
-RUN npm install -g sync-dependencies && \
-    sync-dependencies --source terriajs && \
-    npm install && \
-    npm run gulp
+RUN npm install && npm run gulp && npm start
 
 EXPOSE 3001
 
