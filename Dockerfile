@@ -1,32 +1,44 @@
-FROM ubuntu:20.04
+FROM node:8
 
-LABEL Description="TerriaJS dockerized for OneGeology"
+LABEL Description="TerriaJS dockerized for OneGeology Applications"
 
 # ------------
-# Install Gdal 
+# Nodejs, Gdal
 # ------------
 
-ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y git gdal-bin
+RUN apt-get update && apt-get install -y git nodejs
 
-RUN apt-get update && apt-get install -y git gdal-bin npm
+# ---------------------
+# TerriaJS installation
+# ---------------------
 
-
-# ----------------------------------------
-# Pick TerriaMap repo
-# ----------------------------------------
-
+RUN npm install -g gulp
+RUN mkdir -p /usr/local/app/
 WORKDIR /usr/local/app/
 
-COPY . /usr/local/app/TerriaMap 
+# ----------------------------------------
+# Use the original TerriaMap branch
+# ----------------------------------------
+
+RUN git clone https://github.com/TerriaJS/TerriaMap /usr/local/app/TerriaMap
 
 WORKDIR /usr/local/app/TerriaMap
+# If installing more than one instance of TerriaMap then replace the lines above with the ones below to clone in a differnt directory
+# For example:
+#RUN git clone -b USGS https://github.com/zdefne-usgs/TerriaMap /usr/local/app/TerriaUSGS
+#WORKDIR /usr/local/app/TerriaUSGS
 
-RUN npm cache verify
-RUN npm install -g sync-dependencies sync-dependencies --source terriajs --from packages/terriajs/package.json
-RUN yarn install
-RUN npm run gulp 
-RUN npm start
+# ----------------------------------------
+# Customization for USGS
+# ----------------------------------------
+COPY ./files/feedback.js /usr/local/app/TerriaMap/node_modules/terriajs-server/lib/controllers/feedback.js
+COPY ./files/index.js /usr/local/app/TerriaMap/index.js
+COPY ./files/UserInterface.jsx /usr/local/app/TerriaMap/lib/Views/UserInterface.jsx
+COPY ./images/ /usr/local/app/TerriaMap/wwwroot/build/
 
+RUN npm install
+RUN npm run gulp
 EXPOSE 3001
 
 # --------------------
@@ -34,3 +46,20 @@ EXPOSE 3001
 # --------------------
 
 CMD [ "node", "node_modules/terriajs-server/lib/app.js", "--config-file", "devserverconfig.json" ]
+
+# ----------------------------------------
+# Customization for USGS
+# ----------------------------------------
+COPY ./files/feedback.js /usr/local/app/TerriaMap/node_modules/terriajs-server/lib/controllers/feedback.js
+COPY ./files/index.js /usr/local/app/TerriaMap/index.js
+COPY ./files/UserInterface.jsx /usr/local/app/TerriaMap/lib/Views/UserInterface.jsx
+COPY ./images/ /usr/local/app/TerriaMap/wwwroot/build/
+COPY ./devserverconfig.json /usr/local/app/TerriaMap/devserverconfig.json
+COPY ./config.json /usr/local/app/TerriaMap/wwwroot/config.json
+COPY ./usgs.json /usr/local/app/TerriaMap/wwwroot/init/usgs.json
+
+# --------------------
+# Run within container
+# --------------------
+
+RUN npm start
