@@ -21,7 +21,7 @@ WORKDIR /usr/local/app/
 # Use the original TerriaMap branch
 # ----------------------------------------
 
-RUN git clone https://github.com/TerriaJS/TerriaMap -b 2020-05-08 --single-branch /usr/local/app/TerriaMap
+RUN git clone https://github.com/TerriaJS/TerriaMap /usr/local/app/TerriaMap
 
 WORKDIR /usr/local/app/TerriaMap
 # If installing more than one instance of TerriaMap then replace the lines above with the ones below to clone in a differnt directory
