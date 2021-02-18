@@ -37,6 +37,12 @@ COPY ./files/index.js /usr/local/app/TerriaMap/index.js
 COPY ./files/UserInterface.jsx /usr/local/app/TerriaMap/lib/Views/UserInterface.jsx
 COPY ./images/ /usr/local/app/TerriaMap/wwwroot/build/
 
+## Force git to clone with "https://" instead of "git://" urls
+
+RUN git config --global url."https://github.com/".insteadOf git://github.com
+
+## Install
+
 RUN npm install
 RUN npm run gulp
 EXPOSE 3001
@@ -54,12 +60,9 @@ COPY ./files/feedback.js /usr/local/app/TerriaMap/node_modules/terriajs-server/l
 COPY ./files/index.js /usr/local/app/TerriaMap/index.js
 COPY ./files/UserInterface.jsx /usr/local/app/TerriaMap/lib/Views/UserInterface.jsx
 COPY ./images/ /usr/local/app/TerriaMap/wwwroot/build/
+
+### Final config (from original docker compose)
+
 COPY ./devserverconfig.json /usr/local/app/TerriaMap/devserverconfig.json
 COPY ./config.json /usr/local/app/TerriaMap/wwwroot/config.json
 COPY ./usgs.json /usr/local/app/TerriaMap/wwwroot/init/usgs.json
-
-# --------------------
-# Run within container
-# --------------------
-
-RUN npm start
