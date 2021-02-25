@@ -28,10 +28,10 @@ WORKDIR /usr/local/app/TerriaMap
 # ----------------------------------------
 # Customization for OneGeology
 # ----------------------------------------
-COPY ./files/feedback.js /usr/local/app/TerriaMap/node_modules/terriajs-server/lib/controllers/feedback.js
-COPY ./files/index.js /usr/local/app/TerriaMap/index.js
-COPY ./files/UserInterface.jsx /usr/local/app/TerriaMap/lib/Views/UserInterface.jsx
-COPY ./images/ /usr/local/app/TerriaMap/wwwroot/build/
+
+COPY ./bgsconfig/lib/Styles/loader.css /usr/local/app/TerriaMap/lib/Styles/loader.css
+COPY ./bgsconfig/lib/Views/global.scss /usr/local/app/TerriaMap/lib/Views/global.scss
+COPY ./bgsconfig/wwwroot/images/oneGeology_logo.png /usr/local/app/TerriaMap/wwwroot/images/
 
 ## Force git to use "https://" instead of "git://" urls
 
@@ -48,14 +48,6 @@ EXPOSE 3001
 # --------------------
 
 CMD [ "node", "node_modules/terriajs-server/lib/app.js", "--config-file", "devserverconfig.json" ]
-
-# ----------------------------------------
-# Customization for USGS
-# ----------------------------------------
-COPY ./files/feedback.js /usr/local/app/TerriaMap/node_modules/terriajs-server/lib/controllers/feedback.js
-COPY ./files/index.js /usr/local/app/TerriaMap/index.js
-COPY ./files/UserInterface.jsx /usr/local/app/TerriaMap/lib/Views/UserInterface.jsx
-COPY ./images/ /usr/local/app/TerriaMap/wwwroot/build/
 
 ### Final config (from original docker compose)
 
