@@ -1,6 +1,6 @@
 {
     initializationUrls: [
-        "usgs",
+        "onegeology",
     ],
     parameters: {
         disableSplitter: false,
@@ -26,14 +26,14 @@
            //enableOnLocalhost: false // If false, don't show this when running on localhost
         //},  
         developerAttribution: {
-            text: "U.S. Geological Survey",
-            link: "http://www.usgs.gov"
+            text: "OneGeology",
+            link: "http://www.onegeology.org/"
         },
-        appName: "USGS Terria Map",
+        appName: "OneGeology Terria Map",
         brandBarElements: [
-            "<table cellspacing=\"20\"><tr><td style=\"padding-right:18px\"> <a target=\"_blank\" href=\"https://www.usgs.gov/\"><img vertical-align=\"middle\"  src=\"images/oneGeology_logo.png\" style=\"height:42;border:0\" title=\"OneGeology\" /></a></td></tr></table>"
+            "<table cellspacing=\"20\"><tr><td style=\"padding-right:18px\"> <a target=\"_blank\" href=\"http://www.onegeology.org/\"><img vertical-align=\"middle\"  src=\"images/oneGeology_logo.png\" style=\"height:42;border:0\" title=\"OneGeology\" /></a></td></tr></table>"
         ],
-        supportEmail: "[insert support email]",
+        supportEmail: "onegeology@bgs.ac.uk",
         proj4ServiceBaseUrl: "proj4def/",
         feedbackUrl: "feedback",
         }
