@@ -32,6 +32,7 @@ WORKDIR /usr/local/app/TerriaMap
 COPY ./bgsconfig/lib/Styles/loader.css /usr/local/app/TerriaMap/lib/Styles/loader.css
 COPY ./bgsconfig/lib/Views/global.scss /usr/local/app/TerriaMap/lib/Views/global.scss
 COPY ./bgsconfig/wwwroot/images/oneGeology_logo.png /usr/local/app/TerriaMap/wwwroot/images/
+COPY ./bgsconfig/wwwroot/favicons/ /usr/local/app/TerriaMap/wwwroot/favicons/
 
 ## Force git to use "https://" instead of "git://" urls
 
