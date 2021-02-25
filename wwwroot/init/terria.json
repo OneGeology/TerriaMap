@@ -1,10 +1,13 @@
 {
   "homeCamera": {
-    "north": -8,
-    "east": 158,
-    "south": -45,
-    "west": 109
+    "north": 55,
+    "east": 48,
+    "south": 38,
+    "west": -21
   },
+  "corsDomains": [ 
+     
+  ],
   "catalog": [
     {
       "name": "Example Datasets",

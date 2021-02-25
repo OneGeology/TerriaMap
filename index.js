@@ -20,6 +20,7 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
 import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
+import EsriSearchProviderViewModel from './esriGeocoderSearchProviderModel.js';
 import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
 
@@ -70,8 +71,13 @@ module.exports = terria.start({
                 terria: terria,
                 key: terria.configParameters.bingMapsKey
             }),
-            new GazetteerSearchProviderViewModel({terria}),
-            new GnafSearchProviderViewModel({terria})
+            new GazetteerSearchProviderViewModel({
+                terria: terria,
+                url: 'https://api.geocode.earth/v1/search',
+                forceUseOfProxy: false,
+            }),
+            new GnafSearchProviderViewModel({terria}),
+            // new EsriSearchProviderViewModel({terria}),
         ];
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
@@ -79,14 +85,15 @@ module.exports = terria.start({
         updateApplicationOnMessageFromParentWindow(terria, window);
 
         // Create the various base map options.
-        var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
+        // var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
         var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
         var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
-        var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
+        // var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
         var globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
 
-        var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+        // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+        var allBaseMaps = globalBaseMaps;
         selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
         // Show a modal disclaimer before user can do anything else.
