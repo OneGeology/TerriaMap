@@ -17,9 +17,9 @@ import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
-import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
-import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
-import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
+// import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
+// import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
+// import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 import EsriSearchProviderViewModel from './esriGeocoderSearchProviderModel.js';
 import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
@@ -67,17 +67,17 @@ module.exports = terria.start({
 }).always(function() {
     try {
         viewState.searchState.locationSearchProviders = [
-            new BingMapsSearchProviderViewModel({
-                terria: terria,
-                key: terria.configParameters.bingMapsKey
-            }),
-            new GazetteerSearchProviderViewModel({
-                terria: terria,
-                url: 'https://api.geocode.earth/v1/search',
-                forceUseOfProxy: false,
-            }),
-            new GnafSearchProviderViewModel({terria}),
-            // new EsriSearchProviderViewModel({terria}),
+        //     new BingMapsSearchProviderViewModel({
+        //         terria: terria,
+        //         key: terria.configParameters.bingMapsKey
+        //     }),
+        //     new GazetteerSearchProviderViewModel({
+        //         terria: terria,
+        //         url: 'https://api.geocode.earth/v1/search',
+        //         forceUseOfProxy: false,
+        //     }),
+        //     new GnafSearchProviderViewModel({terria}),
+            new EsriSearchProviderViewModel({terria}),
         ];
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
