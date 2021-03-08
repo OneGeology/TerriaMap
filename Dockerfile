@@ -54,4 +54,4 @@ CMD [ "node", "node_modules/terriajs-server/lib/app.js", "--config-file", "devse
 
 COPY ./devserverconfig.json /usr/local/app/TerriaMap/devserverconfig.json
 COPY ./config.json /usr/local/app/TerriaMap/wwwroot/config.json
-COPY ./usgs.json /usr/local/app/TerriaMap/wwwroot/init/usgs.json
+COPY ./onegeology.json /usr/local/app/TerriaMap/wwwroot/init/onegeology.json

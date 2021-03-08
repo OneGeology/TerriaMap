@@ -1,4 +1,5 @@
 {
+    /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
         "onegeology",
     ],
@@ -9,32 +10,59 @@
         googleUrlShortenerKey: null,
         googleAnalyticsKey: null,
         googleAnalyticsOptions: null,
+        /* Text that appears at the bottom of the map */
         disclaimer: {
             text: "Disclaimer: The suggestions and illustrations included in this map are intended to support scientific research; however, they do not guarantee the safety of an individual or structure. The contributors and sponsors of this product do not assume liability for any injury, death, property damage, or other effects because of using this map. This map must not be used for navigation or precise spatial analysis. ",
-        },   
+        },
+        /* Text that will be added to any pages printed from your site.*/   
         printDisclaimer:{
             text: "Disclaimer: The suggestions and illustrations included in this map are intended to support scientific research; however, they do not guarantee the safety of an individual or structure. The contributors and sponsors of this product do not assume liability for any injury, death, property damage, or other effects because of using this map. This map must not be used for navigation or precise spatial analysis. ",
         },
-        //globalDisclaimer: {
-            //confirmationRequired: false,
-            //buttonTitle: "I agree",
-            //title: "Disclaimer: ",
+        // Pop-up disclaimer that will be shown at the start
+        // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
+        // globalDisclaimer: {
+        //     confirmationRequired: false,
+        //     buttonTitle: "Ok",
+        //     title: "Discalimer",
             // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
             // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
-            //prodHostRegex: ".\\.gov$",
+            //prodHostRegex: "gov.\\.au$",
             //devHostRegex: "\\b(staging|preview|test|dev)\\.",
-           //enableOnLocalhost: false // If false, don't show this when running on localhost
-        //},  
+        //     enableOnLocalhost: true // If false, don't show this when running on localhost
+        // },
         developerAttribution: {
             text: "OneGeology",
             link: "http://www.onegeology.org/"
         },
-        appName: "OneGeology Terria Map",
+        // This is used in various text messages. You should also set <title> in index.html
+        appName: "OneGeology Portal",
+        // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
-            "<table cellspacing=\"20\"><tr><td style=\"padding-right:18px\"> <a target=\"_blank\" href=\"http://www.onegeology.org/\"><img vertical-align=\"middle\"  src=\"images/oneGeology_logo.png\" style=\"height:42;border:0\" title=\"OneGeology\" /></a></td></tr></table>"
+            "",
+            "<a target=\"_blank\" href=\"http://www.onegeology.org/\"><img src=\"images/oneGeology_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a><div class=\"two\"></div><div class=\"one\">Providing geoscience data globally</div>",
+            ""
         ],
         supportEmail: "onegeology@bgs.ac.uk",
         proj4ServiceBaseUrl: "proj4def/",
         feedbackUrl: "feedback",
+
+        // Default mobile viewer mode when loading the map for the first time on mobile platforms.
+        // Options are: "3DTerrain", "3DSmooth", "2D"
+        mobileDefaultViewerMode: "2D",
+        // Enable experimental features, since its nice to have the bleeding edge.
+        // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
+        "experimentalFeatures": false,
+
+        // To override TerriaJS's region mapping file with a local one.
+        // regionMappingDefinitionsUrl: "data/regionMapping.json"
+
+        // True to display welcome message on startup.
+        "showWelcomeMessage": true,
+
+        // True to display in-app guides.
+        // "showInAppGuides": false,
+
+        // True to display new feature popups.
+        // "showFeaturePrompts": false,
         }
 }
