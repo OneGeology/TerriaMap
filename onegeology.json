@@ -175,26 +175,6 @@
                 "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
               }
             ]
-          },
-          {
-            "description": "Chlorophyll-a, reflecting wavelengths in the green part of the visible light spectrum, is the substance that helps plants capture the sun’s energy. In the water, it indicates the presence of microscopic green algae (phytoplankton). While these plants are a natural part of the reef ecosystem, elevated numbers (a bloom) of phytoplankton signal elevated nutrient levels, especially nitrogen, in the water. Typical sources are runoff from excess fertiliser being applied to crops and, to a lesser extent in the Great Barrier Reef region, sewage contamination from urban areas.",
-            "layers": "Chl_MIM_mean",
-            "name": "Chlorophyll-a concentration (annual)",
-            "parameters": {
-              "ABOVEMAXCOLOR": "0xAF324B",
-              "BELOWMINCOLOR": "transparent",
-              "COLORSCALERANGE": "0,1",
-              "FORMAT": "image/png",
-              "LAYERS": "Chl_MIM_median",
-              "LOGSCALE": "false",
-              "NUMCOLORBANDS": "16",
-              "PALETTE": "mwq_chl",
-              "STYLES": "boxfill/mwq_chl",
-              "TRANSPARENT": "true",
-              "VERSION": "1.1.1"
-            },
-            "type": "wms",
-            "url": "http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1A"
           }
         ]
       },
@@ -207,11 +187,8 @@
           {
             "name": "OG CSW",
             "type": "csw",
-            "url": "http://ogcdev.bgs.ac.uk/cat/srv/eng/csw",
+            "url": "http://ogcdev.bgs.ac.uk/cat/srv/eng/csw?request=GetCapabilities&service=CSW",
             "description": "This demonstrates populating a catalog group by doing a live query to a [OneGeology](http://ogcdev.bgs.ac.uk/cat/srv/eng/csw?) server. When you expand this group the first time, CKAN is automatically queried via its `package_search` API and the compatible datasets are shown grouped by publishing organization.",
-            "blacklist": {
-              "Rainforests (EVC_2005)": true
-            },
             "groupBy": "organization",
             "minimumMaxScaleDenominator": 10000000000,
             "filterByWmsGetCapabilities": false,
