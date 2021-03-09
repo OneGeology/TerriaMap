@@ -2,8 +2,23 @@
     "port": 3001,
 
     "allowProxyFor" : [
+        "gov",
+        "gov",
+        "org",
+        "edu",
+        "us",
+        "geocommunicator.gov",
+        "arcgisonline.com",
+        "api.github.com",
+        "githubusercontent.com",
+        "esri.com",
+        "axiomalaska.com",
+        "axds.co",
+        "ingv.it",
         "nicta.com.au",
         "gov.au",
+        "gov.uk",
+        "gov.nz",
         "csiro.au",
         "arcgis.com",
         "argo.jcommops.org",
@@ -17,11 +32,19 @@
         "geoserver.imos.org.au",
         "nci.org.au",
         "static.nationalmap.nicta.com.au",
-        "githubusercontent.com",
-        "gov",
-        "gov.uk",
-        "gov.nz",
-        "sample.aero3dpro.com.au"
-    ]
+        "ogcdev.bgs.ac.uk",
+    ],
+    shareUrlPrefixes: {
+        "g": {
+            service: "gist",
+            accessToken: "3ebdfcd44555f7b5fa412ce858ce8b519a70e7dd"
+        }
+    },
+    newShareUrlPrefix: "g",
+    feedback: {
+        userAgent: "TerriaBot (TerriaJS Feedback)",
+        issuesUrl: "https://api.github.com/repos/[insert github account name]/[insert github repo name]/issues",
+        accessToken: "[insert github repo token]"
+    },
 }
 
