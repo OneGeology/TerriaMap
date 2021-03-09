@@ -71,7 +71,7 @@
             "includeEsriFeatureServer": true
           }, 
           {
-          "url": "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer",
+          "url": "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer?",
           "type": "wms",
           "dataCustodian": "[BGS](https://www.bgs.ac.uk/)",
           "name": "BGS Geology 50k",
