@@ -33,6 +33,8 @@
         "nci.org.au",
         "static.nationalmap.nicta.com.au",
         "ogcdev.bgs.ac.uk",
+        "onegeology-geonetwork.brgm.fr", 
+        "metadata.bgs.ac.uk"
     ],
     shareUrlPrefixes: {
         "g": {
