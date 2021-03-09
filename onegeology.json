@@ -71,10 +71,13 @@
             "includeEsriFeatureServer": true
           }, 
           {
+          "layers": "BGS.detailed.geology"
           "url": "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer",
           "type": "wms",
           "dataCustodian": "[BGS](https://www.bgs.ac.uk/)",
           "name": "BGS Geology 50k",
+          "dataUrlType": "direct",
+          "dataUrl": "https://www.bgs.ac.uk/technologies/web-map-services-wms/geoindex-wms-services/",
           "rectangle": [
             -8.344021,
             2.697705,
