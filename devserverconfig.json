@@ -34,7 +34,9 @@
         "static.nationalmap.nicta.com.au",
         "ogcdev.bgs.ac.uk",
         "onegeology-geonetwork.brgm.fr", 
-        "metadata.bgs.ac.uk"
+        "metadata.bgs.ac.uk",
+        "map.bgs.ac.uk", 
+        "ogc.bgs.ac.uk"
     ],
     shareUrlPrefixes: {
         "g": {
