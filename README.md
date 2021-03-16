@@ -17,7 +17,7 @@ If running into problems while setting up locally try the following:
 
   Try upgrading yarn: `yarn upgrade`
 
-  Using NVM make sure node version is on 8 (`nvm install v8' & 'nvm use v8`)
+  Using NVM make sure node version is on 8 (`nvm install v8` & `nvm use v8`)
 
   When running try: `npm install && npm run gulp && npm start` on successful build run gulp to update for chages: `gulp watch`
 
