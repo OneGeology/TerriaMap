@@ -53,7 +53,7 @@ EsriSearchProviderViewModel.prototype.search = function (searchText) {
     this._geocodeInProgress = undefined;
   }
 
-  var url = serviceBaseUrl + '/suggest?';
+  var url = serviceBaseUrl + '/singleLine?';
   url += `text=${searchText}`;
   url += `&outFields=*`;
   url += '&maxSuggestions=5';
