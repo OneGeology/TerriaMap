@@ -14,8 +14,8 @@ If running into problems while setting up locally try the following (before doin
   For bash error which happens when setting up on windows: `npm config set script.shell "C:\\Program Files\\git\\bin\\bash.exe"` (can be reverted using `npm config delete script-   shell`)
 
   For installing Gulp: `npm install --global gulp-cli`
-
-  Try upgrading yarn: `yarn upgrade`
+  
+  For installing Yarn `npm install --global yarn` then do a `yarn install` and if needed a `yarn upgrade` 
 
   Using NVM make sure node version is on 10.16.0, v8 does not seem to work despite what the documentation says (`nvm install 10.16.0` & `nvm use 10.16.0`)
 
