@@ -9,7 +9,7 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 For instructions on how to set up locally, see [local setup documentaion](https://docs.terria.io/guide/getting-started/)
 
-If running into problems while setting up locally try the following:
+If running into problems while setting up locally try the following (before doing so thoroughly read the documentation since there is plenty of helpful tips there):
 
   For bash error which happens when setting up on windows: `npm config set script.shell "C:\\Program Files\\git\\bin\\bash.exe"` (can be reverted using `npm config delete script-   shell`)
 
